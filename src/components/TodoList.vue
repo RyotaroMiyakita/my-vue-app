@@ -18,6 +18,7 @@
       <div>
         <input type="text" v-model="inputTodo" />
         <div v-on:click="addTodo">追加</div>
+        <div>変更</div>
       </div>
     </div>
   </div>
