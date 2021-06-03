@@ -1,49 +1,61 @@
 <template>
   <div id="app">
-    <div class="hello-world">
-      <img alt="Vue logo" src="./assets/logo.png" />
-      <div class="hello-world__message">
-        {{ message }}
+    <link
+      href="https://fonts.googleapis.com/css?family=Acme"
+      rel="stylesheet"
+    />
+    <div id="header">
+      <div id="title">
+        <Title />
       </div>
     </div>
-    <TodoList></TodoList>
-    <Counter v-bind:initialValue="1000"></Counter>
+    <div id="main">
+      <div id="todo">
+        <h2>Todo Box</h2>
+        <TodoBox />
+      </div>
+      <div class="margin"></div>
+      <div id="report">
+        <h2>Report Box</h2>
+        <ReportBox />
+      </div>
+    </div>
+    <aside>
+      <Aside />
+    </aside>
   </div>
 </template>
 
 <script>
-import TodoList from "@/components/TodoList.vue"
-import Counter from "@/components/Counter.vue"
+import Title from "@/components/Title.vue"
+import Aside from "@/components/Aside.vue"
+import TodoBox from "@/components/TodoBox.vue"
+import ReportBox from "@/components/ReportBox.vue"
 export default {
-  name: "App",
   components: {
-    TodoList,
-    Counter,
+    Title,
+    Aside,
+    TodoBox,
+    ReportBox,
   },
-  data: function () {
-    return {
-      message: "WebExpert Course Vue Template",
-    }
-  },
-  methods: {},
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: acme;
 }
-</style>
-
-<style scoped>
-.hello-world {
-  margin-top: 60px;
+#main {
+  margin-right: 150px;
+  display: flex;
+  justify-content: flex-end;
+}
+.margin {
+  width: 75px;
+}
+#todo,
+#report {
   text-align: center;
-}
-
-.hello-world .hello-world__message {
-  color: #2c3e50;
+  width: 450px;
 }
 </style>
